@@ -1,5 +1,7 @@
 .*
-!.travis.yml
+!.github
 !.mvn
+!.ci.settings.xml
+
 *.iml
 target/

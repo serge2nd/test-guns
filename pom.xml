@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.serge2nd</groupId>
+    <artifactId>test-guns</artifactId>
+    <version>0.9.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion><groupId>org.hamcrest</groupId><artifactId>*</artifactId></exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${source-plugin.version}</version>
+                <executions><execution>
+                    <goals><goal>jar</goal></goals>
+                </execution></executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-maven-plugin</artifactId>
+                <version>${sniffer-plugin.version}</version>
+                <configuration><signature>
+                    <groupId>org.codehaus.mojo.signature</groupId>
+                    <artifactId>${java.signature}</artifactId>
+                    <version>1.0</version>
+                </signature></configuration>
+                <executions><execution>
+                    <goals><goal>check</goal></goals>
+                </execution></executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <java.signature>java18</java.signature>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <hamcrest.version>2.2</hamcrest.version>
+        <junit.version>4.13.1</junit.version>
+
+        <surefire-plugin.version>2.22.2</surefire-plugin.version>
+        <compiler-plugin.version>3.8.1</compiler-plugin.version>
+        <source-plugin.version>3.2.1</source-plugin.version>
+        <sniffer-plugin.version>1.19</sniffer-plugin.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>serge2nd-artifactory</id>
+            <url>https://serge2nd.jfrog.io/artifactory/maven</url>
+        </repository>
+        <snapshotRepository>
+            <id>serge2nd-artifactory</id>
+            <url>https://serge2nd.jfrog.io/artifactory/maven</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
