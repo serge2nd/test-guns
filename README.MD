@@ -1,4 +1,4 @@
-# test-guns [![JDK8](https://github.com/serge2nd/test-guns/workflows/JDK8/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK8%22) [![JDK11](https://github.com/serge2nd/test-guns/workflows/JDK11/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK11%22) [![JDK15](https://github.com/serge2nd/test-guns/workflows/JDK15/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK15%22) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/serge2nd/test-guns?color=green&label=latest)](https://serge2nd.jfrog.io/artifactory/maven/ru/serge2nd/test-guns) [![SNAPSHOT](https://img.shields.io/github/v/tag/serge2nd/test-guns?label=tag&color=blue)](https://serge2nd.jfrog.io/artifactory/maven/ru/serge2nd/test-guns/0.9.0-SNAPSHOT)
+# test-guns [![JDK8](https://github.com/serge2nd/test-guns/workflows/JDK8/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK8%22) [![JDK11](https://github.com/serge2nd/test-guns/workflows/JDK11/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK11%22) [![JDK15](https://github.com/serge2nd/test-guns/workflows/JDK15/badge.svg)](https://github.com/serge2nd/test-guns/actions?query=workflow%3A%22JDK15%22) [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/serge2nd/test-guns?color=green&label=latest)](https://serge2nd.jfrog.io/artifactory/maven/ru/serge2nd/test-guns/0.9.0) [![SNAPSHOT](https://img.shields.io/github/v/tag/serge2nd/test-guns?label=tag&color=blue)](https://serge2nd.jfrog.io/artifactory/maven/ru/serge2nd/test-guns/0.9.0-SNAPSHOT)
 A little assistance in asserting/matching with [Hamcrest Matchers](https://github.com/hamcrest/JavaHamcrest).
 
 ## Apply in a project
@@ -14,7 +14,12 @@ First add the snapshot repository:
 Then declare the dependency:
 - release
 ```xml
-<!-- currently not available -->
+<dependency>
+    <groupId>ru.serge2nd</groupId>
+    <artifactId>test-guns</artifactId>
+    <version>0.9.0</version>
+    <scope>test</scope>
+</dependency>
 ```
 - snapshot
 ```xml
